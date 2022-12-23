@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+        .kutu{
+            background-color: orange;
+            border: 1px solid black;
+            border-radius: 50%;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .kutu:only-child{
+            width: 90%;
+            height: 90%;
+        }
+    </style>
+    <script src="kutuphane.js"></script>
+    <script>
+         function ciz(adet)
+         {
+              let renkler =["blue","yellow","green","navy","red","gray","white"];
+              var kutular="";
+              for(let i=0;i<adet;i++)
+              {
+                 // kutular +="<div class='kutu'style='background-color:"+ renkler[rastgeleSayi(0,renkler.length)] +"'>"; 
+                 kutular +="<div class='kutu'style='background-color:rgb("+(i*40)+","+(i*40)+","+(i*40)+")'>";                 
+              }
+              for(let i=0;i<adet;i++)
+              {
+                  kutular +="</div>";                
+              }
+
+              return kutular;
+         }
+    </script>
+</head>
+<body>
+    <script>
+        //Soru: İç-içe rastgele olusturulan sayıda(5-10) dortgen çizen js fonksiyonunu yazınız?
+        
+        document.writeln(ciz(rastgeleSayi(5,9)));
+
+    </script>
+</body>
+</html>

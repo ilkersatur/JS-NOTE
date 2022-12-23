@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     .grafik{
+        width: 300px;
+        height: 300px;
+        background-color: lightgray;
+        display: flex;
+        flex-direction: column;
+     }
+     .bar{
+        background-color: orange;
+        border: 1px solid black;
+        height: 25px;
+     }
+</style>
+<script src="kutuphane.js"></script>
+<script>
+    function grafikCiz(data)
+    {
+        let strGrafik="<div class='grafik'>";
+        
+            for(let ay of data)
+            strGrafik +="<div class='bar' style='width:" +ay +"px;'></div>";
+    
+        strGrafik +="</div>";
+        return strGrafik;    
+    }
+</script>
+<body>
+    <script>
+        //Soru:Yıllık grafik cizen js metodunu yazınız?(Degerler rastgele olsun 50-250)
+        let veriler = new Array(12);
+        for(let i=0;i<veriler.length;i++)
+        {
+            veriler[i] = rastgeleSayi(50,250);
+        }
+       // document.writeln(veriler);
+        document.writeln(grafikCiz(veriler));
+    </script>
+</body>
+</html>

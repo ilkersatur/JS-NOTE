@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+     div{
+          width: 100px;
+          height: 100px;
+          background-color: aqua;
+     }
+     .galeri{
+          width: 600px;
+          height: 300px;
+          background-color: aqua;
+          display: flex;
+          justify-content:center;
+          
+     }
+     .galeri div{
+          width: 200px;
+          height: 300px;
+          background-color: aqua;
+          border: 1px solid black;
+     }
+</style>
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <script>
+        function yukle(){
+          let kutular= document.querySelectorAll(".galeri div");
+          let dizi= Array.from(kutular);
+          for(let i=0;i<dizi.length;i++){
+            dizi[i].addEventListener("mouseover",()=>{
+                dizi[i].style.backgroundColor="red";
+            })
+            dizi[i].addEventListener("mouseleave",()=>{
+                dizi[i].style.backgroundColor="blue";
+            })
+            dizi[i].addEventListener("click",()=>{
+                dizi[i].style.backgroundColor="yellow";
+            })
+          }
+        }
+     </script>
+</head>
+<body>
+<div class="galeri">
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+<script>
+    yukle();
+</script>
+</body>
+</html>

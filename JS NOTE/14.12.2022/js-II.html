@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    
+    function rastgeleSayi(min,max){
+        return min + parseInt(Math.random() * (max-min));
+    }
+
+    function tekSayiBul(dizi){
+        var yeniDizi=[];
+        for(let sayi of dizi){
+            if(sayi%2==1) yeniDizi.push(sayi);
+        }
+        return yeniDizi;
+    }
+    </script>
+</head>
+<body>
+    <script>
+        //Rastgele 1-100 e kadar oluşturulmuş rastgele boyuttaki bir dizi içerisindeki tek sayıları
+        //bulup geri döndüren metodu yazınız
+        var dizi=new Array(rastgeleSayi(10,30));
+        for(let i=0;i<dizi.length;i++){
+                dizi[i]=rastgeleSayi(1,100);
+            }
+        document.writeln("<br>");
+        document.writeln(dizi);
+        document.writeln("<br>");
+        document.writeln(tekSayiBul(dizi));
+    </script>
+</body>
+</html>

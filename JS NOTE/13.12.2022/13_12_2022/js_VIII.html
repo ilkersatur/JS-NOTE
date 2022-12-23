@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tek{
+            background-color: orange;
+            font-size: 16px;
+        }
+        .cift{
+            background-color: gray;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <script>
+         //Soru :Bir dizi icinde;rastgele olusturulmus 20 tam sayiyı(1-100 arası) tutunuz ve bir tablo uzerinde gosteriniz?
+        //Aynı sayı birden fazla olmasın...
+        //Sayıların tek veya cift oldugu yanda gosterilsin
+        //Cift olanlara farklı bir stil tek olanlara farklı bir stil atansın...
+        
+        var dizi=new Array();
+
+        //deger ata
+        let sayac=0;
+        
+        while(sayac<20)
+        {
+            let sayi = parseInt((Math.random()*100)+1);
+             if(!dizi.includes(sayi))
+             {
+                dizi.push(sayi);
+                sayac++;
+             } 
+        } 
+        
+        //tabloyu olustur
+        document.writeln("<table border=1>");
+        for(let sayi of dizi)
+        {
+            let deger =sayi %2==0?"cift":"tek";
+
+             document.writeln("<tr class='"+deger+"'>");
+                document.writeln("<td>" + sayi +"</td>");
+                
+                document.writeln("<td>" + deger +"</td>");
+             document.writeln("</tr>");
+        }
+          
+        document.writeln("</table>"); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //JS Diziler
+
+        //Dizi nasıl tanımlanır?
+        var dizi1= new Array();
+        var dizi2= new Array(5);
+        var dizi3= new Array(11,22,33,44);
+        var dizi4= [];
+        var dizi5= ["Istanbul","Ankara","Izmir","Bursa"]
+        var dizi6= [5];
+
+        //dizi2 ile dizi6 arasındaki fark???
+        //dizi2 => 5 elemanlı içi boş dizi
+        //dizi6 => 5 degeri olan tek elemanlı dizi...
+
+        document.writeln(dizi5);
+        document.writeln("<br>");
+        document.writeln(dizi6);
+        document.writeln("<br>");
+        document.writeln(dizi2);
+
+        //Soru :dizi5 içerisindeki verileri liste şeklinde yazdıran JS kodunu yazınız?
+
+        document.writeln("<ul>");
+        for(let i=0;i<dizi5.length;i++)
+        {
+            document.writeln("<li>"+dizi5[i]+"</li>");
+        }
+        document.writeln("</ul>"); 
+
+        document.writeln("<table border=1>");
+        for(let i=0;i<dizi5.length;i++)
+          document.writeln("<tr><td>"+dizi5[i]+"</td></tr>");
+        document.writeln("</table>");
+
+        //4-for-in dongusu
+        //dizi elemanlarının indis degerini verir...
+        //dizinin eleman sayisini bilmeye gerek yok...
+        for(let i in dizi5)
+          document.writeln(i + "=" + dizi5[i] );
+
+          document.writeln("<br>");
+        //5-for-of dongusu
+        for(let deger of dizi5)
+           document.writeln(deger);
+
+           document.writeln("<br>");
+        
+        //6-foreach
+        // => lambda expression(C#)
+        // => Arrow operatoru(Fat arrow) 
+        // delegate (CallBackFn)
+        dizi5.forEach(x=>document.writeln(x));
+    </script>
+</body>
+</html>

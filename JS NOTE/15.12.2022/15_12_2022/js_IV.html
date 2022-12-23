@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script>
+        function urunEkle(){
+            //silsin
+            //bosalt
+            let idVal = document.getElementById("id");
+            let adVal = document.getElementById("ad");
+            let fiyatVal = document.getElementById("fiyat");
+           
+            let tablo = document.getElementById("urunler");
+            if(true)
+            {
+            let data = "<tr><td>"+ idVal.value +"</td><td>"+ adVal.value +"</td><td>"+fiyatVal.value+"</td></tr>";
+            tablo.innerHTML +=data; 
+            }
+            else
+            {
+                idVal.className="";
+            }
+            //uzun yontem...
+            // idVal.value=" ";
+            // adVal.value=" ";
+            // fiyatVal.value =" ";
+            icerikTemizle();
+            return false;
+        } 
+        function icerikTemizle(){
+            let alanlar = document.getElementsByTagName("input");
+            for(let i=0;i<alanlar.length;i++)
+            {
+                if(alanlar[i].attributes[0].value=="text"){
+                    alanlar[i].value="";
+                }
+            }
+        }
+
+        function tumuBosMu()
+        {
+            let sayac=0;
+            let alanlar = document.getElementsByTagName("input");
+            for(let i=0;i<alanlar.length;i++)
+            {
+                if(alanlar[i].attributes[0].value=="text" && alanlar[i].value==""){
+                    sayac++;
+                }
+            }
+            return alanlar.length== sayac ?false:true;
+        }
+    </script>
+</head>
+<body>
+    <form id="frmUrunler">
+        <table>
+            <tr>
+                <td>Urun ID</td>
+                <td><input type="text" id="id" /></td>
+            </tr>
+            <tr>
+                <td>Urun Adı</td>
+                <td><input type="text" id="ad" /></td>
+            </tr>
+            <tr>
+                <td>Fiyat</td>
+                <td><input type="text" id="fiyat" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Ekle" onclick="return urunEkle()" /></td>
+            </tr>
+        </table>
+        
+    </form>
+    <table id="urunler" border="1"></table>
+</body>
+</html>
