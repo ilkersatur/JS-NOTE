@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .mavi{
+            background-color: blue;
+        }
+        .daire{
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            border-radius: 50px;
+        }
+
+        .kutu{
+            width: 100px;
+            height: 100px;
+            background-color:slategrey;
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        function mainBul()
+        {
+            let main= document.getElementById("main");
+
+           main.style.backgroundColor="red !important";
+           main.className="mavi";
+           //main.style="background-color:orange;font-size:30px";
+        } 
+
+        function h1Bul()
+        {
+            var h1List= document.getElementsByTagName("h1");
+
+            for(let i=0;i<h1List.length;i++)
+            {
+                h1List[i].innerText="Degisti...";
+                h1List[i].style="font-Family=Verdana;color:orange;font-size:60px";
+            }
+        }
+
+        function daireBul()
+        {
+            let daireler= document.getElementsByClassName("daire");
+            let dizi = Array.from(daireler);
+            for(let daire of dizi)
+            {
+                daire.className="kutu";
+            }
+        }
+
+        function adBul()
+        {
+            let ad = document.getElementsByName("ad");
+
+            for(let i=0;i<ad.length;i++)
+            ad[i].style="border:5px solid orange";
+        }
+
+        function selektorKullanımı()
+        {
+           
+            let elem= document.querySelector("div p");
+            elem.style="color:white;background-color:black;font-size:20px";
+        }
+    </script>
+</head>
+<body>
+    <script>
+      //DOM(Document Object Model)
+         
+      
+    </script>
+    <div id="main">
+      <h1>Merhaba CSS</h1>
+      <h1>Naber?</h1>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione quam in quisquam non omnis reiciendis, voluptatum facere quibusdam aliquid at molestias voluptas soluta autem enim sint minus suscipit architecto quas!
+      </p>
+    </div>
+    <div class="daire">
+     1
+    </div>
+    <div class="daire">
+     2
+    </div>
+    <div class="daire">
+     3
+    </div>
+    <form>
+        <input type="text" name="ad" />
+        <input type="text" name="soyad" />
+    </form>
+    <script>
+        //mainBul();
+        h1Bul();
+        daireBul();
+        adBul();
+        selektorKullanımı();
+    </script>
+</body>
+</html>

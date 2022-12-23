@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function urunEkle(){
+            let urun = document.createElement("tr");
+            let id = document.createElement("td"); 
+            let ad = document.createElement("td"); 
+            let fiyat = document.createElement("td"); 
+            let idVal = document.getElementById("id").value;
+            let adVal = document.getElementById("ad").value;
+            let fiyatVal = document.getElementById("fiyat").value;
+            id.innerHTML=idVal;
+            ad.innerHTML=adVal;
+            fiyat.innerHTML=fiyatVal;
+            urun.append(id);
+            urun.append(ad);
+            urun.append(fiyat);
+            let tablo = document.getElementById("urunler");
+            tablo.append(urun);
+            return false;
+        } 
+    </script>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td>Urun ID</td>
+                <td><input type="text" id="id" /></td>
+            </tr>
+            <tr>
+                <td>Urun Adı</td>
+                <td><input type="text" id="ad" /></td>
+            </tr>
+            <tr>
+                <td>Fiyat</td>
+                <td><input type="text" id="fiyat" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Ekle" onclick="return urunEkle()" /></td>
+            </tr>
+        </table>
+        
+    </form>
+    <table id="urunler" border="1"></table>
+</body>
+</html>

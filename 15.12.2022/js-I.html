@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .mavi{
+            background-color: blue ;
+        }
+        .daire{
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            border-radius: 50px;
+        }
+        .kutu{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(246, 255, 0);
+            border-radius: 50px;
+        }
+    </style>
+    <script>
+        function mainBul(){
+           let main = document.getElementById("main");
+           //main.style.backgroundColor="red";
+           //main.className="mavi"; 
+           main.style="background-color: orange; font-size:30px";
+        }
+        function h1Bul(){
+            var h1List=document.getElementsByTagName("h1");
+            for (let index = 0; index < h1List.length; index++) {
+                h1List[index].style="font-family=verdana;color:green";
+                //h1List[index].innerText="Değişti"
+                
+            }
+        }
+        function daireBul(){
+           let daireler= document.getElementsByClassName("daire");
+           let dizi=Array.from(daireler); //diziye çevirme
+            for (let index = 0; index < dizi.length; index++) {
+                dizi[index].className="kutu";
+                
+            }
+        }
+        function adBul(){
+           let ad = document.getElementsByName("ad");
+            for (let index = 0; index < ad.length; index++) {
+                ad[index].style="border: 10px solid orange"
+                
+            }
+        }
+        function selectorKullanimi(){
+           let elem= document.querySelector("div p");
+           elem.style="color:white;background-color:black;";
+        }
+    </script>
+</head>
+<body>
+
+    <div id="main">
+    <h1>MERHABA CSS</h1>
+    <h1>Naber?</h1>
+    <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam, ducimus quasi eveniet culpa et totam quidem, quo eum quibusdam sint quisquam quaerat, exercitationem esse at accusantium iusto nisi incidunt provident!
+    </p>
+    </div>
+    <div class="daire">
+    </div>
+    <div class="daire">
+    </div>
+    <div class="daire">
+    </div>
+    <form action="">
+        <input type="text" name="ad">
+        <input type="text" name="soyad">
+    </form>
+    <script>
+    //DOM(Document Object Model)
+        //mainBul();
+        h1Bul();
+        daireBul();
+        adBul();
+        selectorKullanimi();
+    </script>
+    
+</body>
+</html>

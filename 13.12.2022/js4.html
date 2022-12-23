@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        //js de diziler sonradan boyutlandırılabilir. Aynı zamanda bir dizi istenildiğinde stack, queue, hashtable, kolleksiyon gibi kullanılabilir.
+        var dizi=["İstanbul","İzmir","Ank","Tokat","Bursa"];
+        //stack
+        dizi.push("Van");
+        document.writeln(dizi.pop()); 
+        document.writeln(dizi.pop());
+        document.writeln("<br>");
+        document.writeln(dizi);
+        //queue
+        document.writeln("<br>");
+        document.writeln(dizi.shift()); 
+        document.writeln(dizi.shift());
+        document.writeln(dizi);
+
+        document.writeln("<br>");
+        dizi.unshift("Çanakkale");
+        document.writeln(dizi);
+        document.writeln("<br>");
+        //bir dizi içinde rastgele oluşturulmuş 20 tam sayıyı tutunuz ve bir tablo üzerinde gösteriniz
+        
+        var dizi2=new Array();
+        for(let i = 0;i<20;i++){
+            dizi2.push(parseInt(Math.random()*100+1));
+        }
+        document.writeln("<table border=1>");
+        for (let sayi of dizi2) {
+            document.writeln("<tr><td>"+sayi+"</td></tr>");
+        }
+        document.writeln("</table>");
+
+        document.writeln("<br>"); */
+////////////////////////////////////////////////////
+        var dizi3=new Array();
+        let i=0;
+        let sayac=0;
+        while(i<20){
+            sayi=parseInt(Math.random()*20+1)
+            if(!dizi3.includes(sayi)){
+                dizi3.push(sayi);
+                i++;
+            }
+            else
+                document.writeln(sayi);
+            sayac++;//kaç kere çalıştığını görelim
+        }
+        document.writeln("<br>"+sayac+" kere çalıştı"+"<br>");
+        document.writeln(`while döngüsü ${sayac} kere çalıştı`);//ES-6 da gelen kullanım
+        document.writeln("<table border=1>");
+        for (let sayi of dizi3) {
+            document.writeln("<tr><td>"+sayi+"</td></tr>");
+        }
+        document.writeln("</table>");
+    </script>
+</body>
+</html>

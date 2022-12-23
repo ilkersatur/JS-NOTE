@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function sehirEkle(){
+           // alert("merhaba");
+           let ad = document.getElementById("ad");
+           //alert(ad.value);
+
+           let sehirler = document.getElementById("sehirler");
+           let sehir = document.createElement("li");
+           sehir.innerText=ad.value;
+
+           sehirler.append(sehir);
+           return false;
+        }
+    </script>
+</head>
+<body>
+    <div id="main"></div>
+    <script>
+        //DOM 
+        var h1 = document.createElement("h1");
+        h1.innerText="Dinamik H1";
+        let div = document.getElementById("main");   
+        div.append(h1);
+    </script>
+    <form>
+       <input type="text" id="ad"/>
+       <input type="submit" value="Ekle" onclick="return sehirEkle()" />
+
+    </form>
+    <ul id="sehirler"></ul>
+</body>
+</html>

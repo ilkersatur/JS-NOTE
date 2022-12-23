@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>/*
+        let k=prompt("Sayi Gir");
+        for(let i=0;i<k;i++){
+            document.writeln("<h1>selam</h1>");
+        }*/
+
+        //kullanıcı tarafınfdan girilen satır ve sütün sayısına göre tablo oluşturan kodu yazınz.
+        /*let satir=prompt("satır sayısı");
+        let sutun=prompt("sütun sayısı");
+        let kelime=prompt("kelime");
+        document.writeln("<table border=1>");
+        for(let i=0; i<sutun;i++){
+            document.writeln("<tr>");
+            for(let k=0; k<satir;k++){
+            document.writeln("<td><br>");
+            document.writeln(kelime);
+            document.writeln("</td>");
+            }
+        document.writeln("</tr>");    
+        }
+        document.writeln("</table>");*/
+        let satir=prompt("satır sayısı");
+        let sutun=prompt("sütun sayısı");
+        let kelime=prompt("kelime");
+        document.writeln("<table border=1>");
+        for(let i=0; i<sutun;i++){
+                if(i%2==0)
+                {
+                    document.writeln("<tr bgcolor=gray>");
+                }
+                else
+                    document.writeln("<tr bgcolor=orange>");
+            for(let k=0; k<satir;k++){
+            document.writeln("<td><br>");
+            document.writeln(kelime);
+            document.writeln("</td>");
+            }
+        document.writeln("</tr>");    
+        }
+        document.writeln("</table>");
+
+    </script>
+</body>
+</html>

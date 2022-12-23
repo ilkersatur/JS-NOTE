@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+     div{
+          width: 100px;
+          height: 100px;
+          background-color: aqua;
+     }
+     .galeri{
+          width: 600px;
+          height: 300px;
+          background-color: aqua;
+          display: flex;
+          justify-content:center;
+          
+     }
+     .galeri div{
+          width: 200px;
+          height: 300px;
+          background-color: aqua;
+          border: 1px solid black;
+     }
+</style>
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <script>
+          function yaz(){document.writeln("yazz");}
+          function gir(kutu){
+              kutu.style.backgroundColor="gray";
+          }
+          function cik(kutu){
+               kutu.style.backgroundColor="aqua";
+          }
+          function tikla(kutu){
+               kutu.style.backgroundColor="red";
+          }
+     </script>
+</head>
+<body>
+     <script>
+          //Events
+          //Olayların bağlanlması
+          //1-Static Yöntem-Herhangi bir metodu elementlerin eventleri ile doğrudan ilişkilendirme
+          //2-Dinamik Yöntem - Kod ile istenilen elementlere ilgili metodların bağlanmasıdır.
+     </script>
+     <button onclick="yaz()"></button>
+     <div onclick="yaz()"></div>
+<br><br><br>
+<div class="galeri">
+     <div onmouseout="cik(this)" onmouseover="gir(this)" onclick="tikla(this)"></div>
+     <div onmouseout="cik(this)" onmouseover="gir(this)" onclick="tikla(this)"></div>
+     <div onmouseout="cik(this)" onmouseover="gir(this)" onclick="tikla(this)"></div>
+</div>
+</body>
+</html>

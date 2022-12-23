@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body{
+    background-color: lightgreen;
+}
+table, td {
+  border: 1px solid black;
+}
+h4{
+    color: red;
+}
+button{
+    width: 100px;
+    background-color:greenyellow;
+}
+input{
+    background-color: greenyellow;
+    border-radius: 10px;
+}
+input h4{
+    background-color: greenyellow;
+}
+table{
+    background-color: greenyellow;
+}
+</style>
+</head>
+<body>
+
+<form id="frmUrunler">
+    <h4>Urun Adı &nbsp;<input type="text" id="urunadi"><br>
+    <h4>Fiyat  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="urunfiyat"><br>
+    <button type="button" onclick="UrunEkle()">EKLE</button>
+</form>
+
+<script>
+let i =0;
+function KayitSil(){
+    let satir=document.getElementById(i);
+    satir.parentNode.removeChild(satir);
+}
+function UrunEkle() {
+  var tablo = document.getElementById("tablo");
+  var urunAdi = document.getElementById("urunadi").value;
+  var urunFiyati = document.getElementById("urunfiyat").value;
+  if(urunAdi&&urunFiyati!=""){
+    var sira = tablo.insertRow(0);
+    var cell1 = sira.insertCell(0);
+    var cell2 = sira.insertCell(1);
+    var cell3 = sira.insertCell(2);
+    var cell4 = sira.insertCell(3);
+    i++;
+    cell1.innerHTML = i;
+    cell2.innerHTML = urunAdi;
+    cell3.innerHTML = urunFiyati;
+    cell4.innerHTML = ("<a href='' onclick='kayitSil()' id='sil'>Kayıt Sil</a>");
+}
+else
+    alert("HATALI GIRIS!");
+    //uzun yöntem
+    //document.getElementById("urunadi").value="";
+Temizle();
+  }
+
+  function Temizle(){
+
+    let alanlar=document.getElementsByTagName("input");
+    for (let index = 0; index < alanlar.length; index++) {
+        if (alanlar[index].attributes[0].value=="text") {
+            alanlar[index].value="";
+            
+        }
+        
+    }
+  }
+</script>
+<h4>Fiyat sadece rakamlardan oluşmalıdır!</h4>
+
+<table id="tablo">
+</table>
+<br>
+
+</body>
+</html>

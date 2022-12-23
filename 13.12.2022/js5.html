@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tek{
+            background-color: rgb(0, 0, 0);
+            color: white;
+            font-size: large;
+            
+        }
+        .çift{
+            background-color: rgb(104, 180, 218);
+            font-size: large;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var dizi3=new Array();
+        let i=0;
+        while(i<20){
+            sayi=parseInt(Math.random()*20+1)
+            if(!dizi3.includes(sayi)){
+                dizi3.push(sayi);
+                i++;
+            }
+        }
+        document.writeln("<table border=1 >");
+        for (let sayi of dizi3) {
+        
+        let deger=sayi%2==0?"çift":"tek"; //if kısaltması
+        
+        document.writeln("<tr class='"+değer+"'>");
+            document.writeln("<td>"+sayi+"</td>");
+
+            document.writeln("<td>"+deger+"</td>");
+        document.writeln("</tr>");
+           /*  document.writeln
+           
+            if(sayi%2==0){
+            document.writeln("<tr class=gri><td>"+sayi+"</td><td>çift</td></tr>");
+            }
+            else
+            document.writeln("<tr class=mavi><td>"+sayi+"</td><td>tek</td></tr>");
+            }*/
+        }
+        document.writeln("</table>");
+
+        
+    </script>
+</body>
+</html>
